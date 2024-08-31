@@ -1,11 +1,137 @@
 ---
+// src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const features = [
+  {
+    icon: 'shield',
+    title: 'Advanced Encryption',
+    description: 'State-of-the-art encryption algorithms to protect your data',
+  },
+  {
+    icon: 'zap',
+    title: 'High Performance',
+    description: 'Lightning-fast processing without compromising security',
+  },
+  {
+    icon: 'code',
+    title: 'Easy Integration',
+    description: 'Seamlessly integrate our solutions into your existing systems',
+  },
+];
+
+const projects = [
+  {
+    title: "SecureVault",
+    description: "End-to-end encrypted cloud storage solution for enterprises",
+    image: "/maskedbytes.svg?height=200&width=300",
+  },
+  {
+    title: "CryptoChat",
+    description: "Real-time encrypted messaging platform for teams",
+    image: "/maskedbytes.svg?height=200&width=300",
+  },
+  {
+    title: "BlockGuard",
+    description: "Blockchain-based data integrity verification system",
+    image: "/maskedbytes.svg?height=200&width=300",
+  },
+  {
+    title: "QuantumShield",
+    description: "Post-quantum cryptography solutions for future-proof security",
+    image: "/maskedbytes.svg?height=200&width=300",
+  },
+  {
+    title: "CipherPay",
+    description: "Secure payment gateway with advanced fraud detection",
+    image: "/maskedbytes.svg?height=200&width=300",
+  },
+  {
+    title: "DataMask",
+    description: "Data anonymization tool for GDPR compliance",
+    image: "/maskedbytes.svg?height=200&width=300",
+  },
+];
 ---
 
-<Layout title="Masked Bytes">
-	<main>
-		<h1 class="text-3xl font-bold underline">
-			Masked Bytes
-		</h1>
-	</main>
+<Layout title="Masked Bytes - Securing Digital Frontiers">
+  <Header />
+  <main>
+    <section class="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gray-800">
+      <div class="container px-4 md:px-6 mx-auto">
+        <div class="flex flex-col items-center space-y-4 text-center">
+          <div class="space-y-2">
+            <h1 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+              Welcome to Masked Bytes
+            </h1>
+            <p class="mx-auto max-w-[700px] text-gray-400 md:text-xl">
+              Securing digital frontiers with innovative cryptography solutions
+            </p>
+          </div>
+          <div class="space-x-4">
+            <a href="#" class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary text-primary-foreground hover:bg-primary/90 h-10 py-2 px-4">
+              Get Started
+            </a>
+            <a href="#" class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground h-10 py-2 px-4">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="w-full py-12 md:py-24 lg:py-32 bg-gray-900">
+      <div class="container px-4 md:px-6 mx-auto">
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">Our Features</h2>
+        <div class="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
+          {features.map((feature) => (
+            <FeatureCard {...feature} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="w-full py-12 md:py-24 lg:py-32 bg-gray-800">
+      <div class="container px-4 md:px-6 mx-auto">
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">About Masked Bytes</h2>
+        <p class="mx-auto max-w-[700px] text-gray-400 md:text-xl text-center">
+          Masked Bytes is at the forefront of cryptographic innovation. We're dedicated to developing cutting-edge
+          solutions that ensure the highest level of data security for businesses and individuals alike.
+        </p>
+      </div>
+    </section>
+
+    <section id="works" class="w-full py-12 md:py-24 lg:py-32 bg-gray-900">
+      <div class="container px-4 md:px-6 mx-auto">
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">Our Works</h2>
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => (
+            <ProjectCard {...project} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="w-full py-12 md:py-24 lg:py-32 bg-gray-800">
+      <div class="container px-4 md:px-6 mx-auto">
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">Get in Touch</h2>
+        <div class="mx-auto max-w-[500px] space-y-2">
+          <form class="flex flex-col space-y-4">
+            <input type="text" placeholder="Your name" class="flex h-10 w-full rounded-md border border-input bg-gray-700 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-gray-100" />
+            <input type="email" placeholder="Your email" class="flex h-10 w-full rounded-md border border-input bg-gray-700 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-gray-100" />
+            <input type="text" placeholder="Subject" class="flex h-10 w-full rounded-md border border-input bg-gray-700 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-gray-100" />
+            <textarea placeholder="Your message" class="flex min-h-[100px] w-full rounded-md border border-input bg-gray-700 px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-gray-100"></textarea>
+            <button type="submit" class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground h-10 py-2 px-4">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
 </Layout>
