@@ -10,19 +10,53 @@ const { title } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="/maskedbytes.svg" />
-     <meta name="description" content="Masked Bytes, unmasking innovation, one byte at a time.">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Masked Bytes - Desarrollo de Software Personalizado">
-    <meta property="og:description" content="Masked Bytes, unmasking innovation, one byte at a time.">
-    <meta property="og:url" content="https://maskedbytes.tech">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="/maskedbytes.svg"> <!-- Cambia esta URL a la de tu imagen -->
-    
+    <meta name="description" content="Unmasking innovation, one byte at a time.">
+    <meta name="keywords" content="desarrollo web, software a medida, soluciones creativas, Masked Bytes">
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href="https://maskedbytes.tech">
+    <meta name="author" content="Masked Bytes">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Masked Bytes">
+    <meta property="og:description" content="Unmasking innovation, one byte at a time.">
+    <meta property="og:image" content="https://maskedbytes.tech/maskedbytes.svg">
+    <meta property="og:url" content="https://maskedbytes.tech">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Masked Bytes">
+    <meta name="twitter:description" content="Unmasking innovation, one byte at a time.">
+    <meta name="twitter:image" content="https://maskedbytes.tech/maskedbytes.svg">
+    <meta property="og:type" content="website">
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="applebot" content="index, follow">
+    <meta name="yandex" content="index, follow">
+    <meta name="msnbot" content="index, follow">
+    <meta name="teoma" content="index, follow">
+    <meta name="slurp" content="index, follow">
+    <meta name="duckduckbot" content="index, follow">
+    <meta name="baiduspider" content="index, follow">
+    <meta name="sogou" content="index, follow">
+    <meta name="exabot" content="index, follow">
+    <meta name="facebot" content="index, follow">
+    <meta name="ia_archiver" content="index, follow">
+    <meta name="archive.org_bot" content="index, follow">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@maskedbytes">
+    <meta name="twitter:creator" content="@maskedbytes">
+    <meta name="twitter:image:alt" content="Masked Bytes Logo">
+    <meta name="twitter:site" content="@maskedbytes">
+    <meta name="twitter:creator" content="@maskedbytes">
+    <meta name="twitter:image:alt" content="Masked Bytes Logo">
+    <meta name="twitter:site" content="@maskedbytes">
+
     <title>{title}</title>
     <link rel="stylesheet" href="/src/styles/global.css" />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
