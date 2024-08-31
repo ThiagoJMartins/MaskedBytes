@@ -15,6 +15,7 @@ html {
 	font-family: "Space Grotesk";
 	background-color: var(--background);
 	color: var(--text-color);
+	scroll-behavior: smooth;
 }
 
 body {
