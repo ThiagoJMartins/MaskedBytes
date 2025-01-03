@@ -1,109 +1,22 @@
 ---
-// src/pages/index.astro
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import FeatureCard from '../components/FeatureCard.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-
-const features = [
-  {
-    icon: 'shield',
-    title: 'Security First',
-    description: 'Robust security measures to protect your enterprise',
-  },
-  {
-    icon: 'zap',
-    title: 'High Performance',
-    description: 'Lightning-fast processing without compromising security',
-  },
-  {
-    icon: 'code',
-    title: 'Vanguard Technologies',
-    description: 'Cutting-edge technologies to keep you ahead of the curve',
-  },
-];
-
-const projects = [
-  {
-    title: "KaroKids",
-    description: "eCommerce platform for kids' clothing",
-    image: "/projects/karokids.webp?height=200&width=300",
-    url: "https://karokids-tienda.vercel.app",
-  },
-  {
-    title: "Medic Shop",
-    description: "Marketplace for medical supplies",
-    image: "/projects/medicshop.webp?height=200&width=300",
-    url: "https://medic.shop",
-  },
-];
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Services from "../components/Services.astro";
+import Portfolio from "../components/Portfolio.astro";
+import About from "../components/About.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Masked Bytes">
+<Layout title="MaskedBytes - Consultora IT para Startups y PyMEs">
   <Header />
   <main>
-
-      <section class="w-full height-minus-navbar py-12 md:py-24 lg:py-32 xl:py-48 bg-gray-800">
-        <div class="container px-4 md:px-6 mx-auto">
-          <div class="flex flex-col items-center space-y-4 text-center">
-            <h1 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-              Welcome to Masked Bytes
-            </h1>
-            <p class="mx-auto max-w-[700px] text-gray-400 md:text-xl">
-              Unmasking innovation, one byte at a time
-            </p>
-          </div>
-        </div>
-        <section id="features" class="w-full py-12 md:py-24 lg:py-32 bg-gray-800">
-          <div class="container px-4 md:px-6 mx-auto">
-            <div class="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
-              {features.map((feature) => (
-                <FeatureCard {...feature} />
-              ))}
-          </div>
-        </div>
-      </section>
-      </section>
-      
-  </div>
-
-    <section id="about" class="w-full py-12 md:py-24 lg:py-32 bg-gray-900">
-      <div class="container px-4 md:px-6 mx-auto">
-        <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">About Masked Bytes</h2>
-        <p class="mx-auto max-w-[700px] text-gray-400 md:text-xl text-center">
-          Masked Bytes is a software development company that specializes in ecommerce and marketplace solutions. We make your enterprise secure, efficient, and scalable using vanguard technologies.
-        </p>
-      </div>
-    </section>
-
-    <section id="works" class="w-full py-12 md:py-24 lg:py-32 bg-gray-800">
-      <div class="container px-4 md:px-6 mx-auto">
-        <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">Our Works</h2>
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <ProjectCard {...project} />
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="w-full py-12 md:py-24 lg:py-32 bg-gray-900">
-      <div class="container px-4 md:px-6 mx-auto">
-        <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">Get in Touch</h2>
-        <div class="mx-auto max-w-[500px] space-y-2">
-          <form class="flex flex-col space-y-4">
-            <input type="text" placeholder="Your name" class="flex h-10 w-full rounded-md border border-input bg-gray-700 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-gray-100" />
-            <input type="email" placeholder="Your email" class="flex h-10 w-full rounded-md border border-input bg-gray-700 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-gray-100" />
-            <input type="text" placeholder="Subject" class="flex h-10 w-full rounded-md border border-input bg-gray-700 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-gray-100" />
-            <textarea placeholder="Your message" class="flex min-h-[100px] w-full rounded-md border border-input bg-gray-700 px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-gray-100"></textarea>
-            <button type="submit" class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground h-10 py-2 px-4">
-              Send Message
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
+    <Hero />
+    <Services />
+    <Portfolio />
+    <About />
+    <Contact />
   </main>
   <Footer />
 </Layout>

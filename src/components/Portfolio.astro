@@ -1,0 +1,72 @@
+---
+import { Image } from "astro:assets";
+import medicshop from "../assets/projects/medicshop.webp";
+import karokids from "../assets/projects/karokids.webp";
+import thelyricsbay from "../assets/projects/thelyricsbay.webp";
+---
+
+<section id="portfolio" class="py-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-12 text-center">Nuestro Trabajo</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div
+        class="glass overflow-hidden transition-all duration-300 hover:transform hover:scale-105"
+      >
+        <Image
+          src={thelyricsbay}
+          alt="TheLyricsBay"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">TheLyricsBay</h3>
+          <p class="mb-4">
+            Desarrollo de una aplicación web y aplicación móvil para una red
+            social de letras de canciones.
+          </p>
+          <a
+            href="https://thelyricsbay-front-production.up.railway.app"
+            target="_blank"
+            class="text-white hover:underline">Ver más</a
+          >
+        </div>
+      </div>
+      <div
+        class="glass overflow-hidden transition-all duration-300 hover:transform hover:scale-105"
+      >
+        <Image
+          src={medicshop}
+          alt="MedicShop"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">MedicShop</h3>
+          <p class="mb-4">
+            Desarrollo de una aplicación web para un marketplace de productos de
+            salud.
+          </p>
+          <a
+            href="https://medic.shop"
+            target="_blank"
+            class="text-white hover:underline">Ver más</a
+          >
+        </div>
+      </div>
+      <div
+        class="glass overflow-hidden transition-all duration-300 hover:transform hover:scale-105"
+      >
+        <Image src={karokids} alt="KaroKids" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">KaroKids</h3>
+          <p class="mb-4">
+            Creación de un eCommerce para una tienda de ropa infantil.
+          </p>
+          <a
+            href="https://karokids-tienda.vercel.app"
+            target="_blank"
+            class="text-white hover:underline">Ver más</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

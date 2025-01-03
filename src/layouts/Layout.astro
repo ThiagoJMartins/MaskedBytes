@@ -1,5 +1,6 @@
 ---
-// src/layouts/Layout.astro
+import { ViewTransitions } from "astro:transitions";
+
 interface Props {
   title: string;
 }
@@ -7,63 +8,82 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="/maskedbytes.svg" />
-    <meta name="description" content="Unmasking innovation, one byte at a time.">
-    <meta name="keywords" content="desarrollo web, software a medida, soluciones creativas, Masked Bytes">
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="MaskedBytes - Consultora IT especializada en MVPs rápidos y escalables"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="canonical" href="https://maskedbytes.tech">
-    <meta name="author" content="Masked Bytes">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Masked Bytes">
-    <meta property="og:description" content="Unmasking innovation, one byte at a time.">
-    <meta property="og:image" content="https://maskedbytes.tech/SocialMedia.jpg">
-    <meta property="og:url" content="https://maskedbytes.tech">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Masked Bytes">
-    <meta name="twitter:description" content="Unmasking innovation, one byte at a time.">
-    <meta name="twitter:image" content="https://maskedbytes.tech/SocialMedia.jpg">
-    <meta property="og:type" content="website">
-
-    <!-- SEO -->
-    <meta name="robots" content="index, follow">
-    <meta name="googlebot" content="index, follow">
-    <meta name="bingbot" content="index, follow">
-    <meta name="applebot" content="index, follow">
-    <meta name="yandex" content="index, follow">
-    <meta name="msnbot" content="index, follow">
-    <meta name="teoma" content="index, follow">
-    <meta name="slurp" content="index, follow">
-    <meta name="duckduckbot" content="index, follow">
-    <meta name="baiduspider" content="index, follow">
-    <meta name="sogou" content="index, follow">
-    <meta name="exabot" content="index, follow">
-    <meta name="facebot" content="index, follow">
-    <meta name="ia_archiver" content="index, follow">
-    <meta name="archive.org_bot" content="index, follow">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@maskedbytes">
-    <meta name="twitter:creator" content="@maskedbytes">
-    <meta name="twitter:image:alt" content="Masked Bytes Logo">
-    <meta name="twitter:site" content="@maskedbytes">
-    <meta name="twitter:creator" content="@maskedbytes">
-    <meta name="twitter:image:alt" content="Masked Bytes Logo">
-    <meta name="twitter:site" content="@maskedbytes">
-
     <title>{title}</title>
-    <link rel="stylesheet" href="/src/styles/global.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <ViewTransitions />
   </head>
-  <body class="bg-gray-900 text-gray-100 font-['Space_Grotesk',sans-serif]">
+  <body class="bg-[#13151a] text-white font-space-grotesk">
     <slot />
   </body>
 </html>
 
+<style is:global>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  html {
+    font-family: "Space Grotesk", sans-serif;
+    background: #13151a;
+    background-size: 224px;
+    scroll-behavior: smooth;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+  body {
+    background: linear-gradient(to bottom right, #13151a, #1c1f26);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .glass-hover:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease;
+  }
+
+  /* Agregamos transiciones suaves globales */
+  * {
+    transition: all 0.3s ease;
+  }
+
+  /* Transición suave para scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
